@@ -1,0 +1,6 @@
+# robots.txt for WordBit
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://wordbit.io/sitemap.xml
