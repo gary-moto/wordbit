@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "WordBit" }],
   metadataBase: new URL("https://wordbit.io"),
-  alternates: { canonical: "https://wordbit.io" },
+  alternates: {},
   openGraph: {
     type: "website", locale: "en_US", url: "https://wordbit.io", siteName: "WordBit",
     title: "WordBit - Free Online Text Tools",
