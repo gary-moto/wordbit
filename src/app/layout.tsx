@@ -31,6 +31,9 @@ export const metadata: Metadata = {
     description: "Free online text tools suite. Fast, accurate, no signup required.",
     images: ["https://wordbit.io/og-image.png"],
   },
+  verification: {
+    google: "1Y84dKVlrjXBgCgkswjjDIhmQwxDxNzjIGDpO1xLHtM",
+  },
   robots: {
     index: true, follow: true,
     googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 },
