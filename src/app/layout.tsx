@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Sidebar from "@/components/Sidebar";
+import TopNav from "@/components/TopNav";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
@@ -43,14 +43,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Inter:wght@300..700&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap" rel="stylesheet" />
       </head>
-      <body className="antialiased min-h-screen flex">
-        <Sidebar />
-        <div className="flex-1 flex flex-col min-h-screen pt-14 lg:pt-0">
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </div>
+      <body className="antialiased min-h-screen flex flex-col bg-white">
+        <TopNav />
+        <main className="flex-1">{children}</main>
+        <Footer />
       </body>
     </html>
   );

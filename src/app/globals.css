@@ -1,19 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #faf8f5;
-  --bg-card: #ffffff;
-  --fg: #2c2825;
-  --fg-muted: #8a8078;
-  --accent: #e07a5f;
-  --accent-light: #f4a88a;
-  --accent-bg: #fdf0eb;
-  --border: #e8e2db;
-  --border-light: #f0ebe5;
-  --shadow-warm: 0 4px 24px -4px rgba(180, 120, 80, 0.08);
-  --shadow-warm-lg: 0 12px 40px -8px rgba(180, 120, 80, 0.12);
-  --font-serif: 'Playfair Display', Georgia, serif;
-  --font-sans: 'Inter', -apple-system, sans-serif;
+  --bg: #ffffff;
+  --fg: #111111;
+  --fg-muted: #6b7280;
+  --accent: #ff6b6b;
+  --accent-hover: #e85d5d;
+  --border: #e5e7eb;
+  --border-light: #f3f4f6;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.06);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.08);
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Inter', -apple-system, sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -25,30 +24,23 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3 { font-family: var(--font-serif); }
+h1, h2, h3 { color: var(--fg); font-weight: 600; }
 
-/* Tool card hover */
-.tool-card {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  box-shadow: var(--shadow-warm);
-}
-.tool-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-warm-lg);
-}
-
-/* Warm textarea */
+/* Inputs */
 textarea, input[type="text"], input[type="number"], select {
   font-family: var(--font-sans);
   border: 1.5px solid var(--border);
-  background: var(--bg-card);
+  background: #fff;
   border-radius: 12px;
   transition: border-color 0.2s, box-shadow 0.2s;
+  color: var(--fg);
+  font-size: 0.9rem;
+  line-height: 1.7;
 }
 textarea:focus, input:focus, select:focus {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(224, 122, 95, 0.15);
+  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.12);
 }
 
 /* Buttons */
@@ -57,51 +49,73 @@ textarea:focus, input:focus, select:focus {
   color: white;
   border: none;
   border-radius: 10px;
-  padding: 0.5rem 1.25rem;
-  font-weight: 500;
+  padding: 0.6rem 1.5rem;
+  font-weight: 600;
   font-size: 0.875rem;
+  font-family: var(--font-sans);
   cursor: pointer;
-  transition: background 0.2s, transform 0.15s;
+  transition: background 0.2s, transform 0.1s;
 }
-.btn-accent:hover { background: #c96a50; transform: translateY(-1px); }
+.btn-accent:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
 .btn-accent:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
+  from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
 }
-.result-animate { animation: fadeIn 0.3s ease-out; }
+.result-animate { animation: fadeIn 0.25s ease-out; }
 .number-display { font-variant-numeric: tabular-nums; }
 
 /* Stat card */
 .stat-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-light);
-  border-radius: 14px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
   padding: 1rem;
   text-align: center;
-  box-shadow: var(--shadow-warm);
 }
 
 /* Result box */
 .result-box {
-  background: #fefcfa;
+  background: #fafafa;
   border: 1.5px solid var(--border);
   border-radius: 12px;
   padding: 1rem;
   white-space: pre-wrap;
   color: var(--fg);
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 0.875rem;
+  line-height: 1.7;
 }
 
-/* Checkbox styling */
-input[type="checkbox"] {
-  accent-color: var(--accent);
+/* Legacy compat */
+.typewriter-input {
+  line-height: 1.7;
 }
 
-/* Scrollbar */
+.notebook-page {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+}
+.notebook-page::before { display: none; }
+
+input[type="checkbox"] { accent-color: var(--accent); }
+
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 3px; }
 
-/* Top nav scrollable tabs */
 .nav-tabs::-webkit-scrollbar { display: none; }
 .nav-tabs { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Unused legacy classes - keep for compat */
+.tool-card { transition: transform 0.2s, box-shadow 0.2s; }
+.tool-card:hover { transform: translateY(-2px); }
+.tool-card::before { display: none; }
+.tool-card-stacked::after { display: none; }
+.coffee-ring { display: none; }
+.ink-dot { display: none; }
