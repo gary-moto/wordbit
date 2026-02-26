@@ -1,5 +1,13 @@
+import { Metadata } from "next";
 import Link from "next/link";
 import { FileText, Shuffle, AlignLeft, Type, Repeat, ListFilter, ArrowRight } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "WordBit - Free Online Text Tools",
+  description: "Free online text tools — word counter, case converter, lorem ipsum generator, character counter, and more. Fast, private, runs in your browser.",
+  alternates: { canonical: "https://wordbit.io" },
+  keywords: ["text tools", "word counter", "case converter", "lorem ipsum generator", "character counter", "text repeater", "remove duplicates", "online text tools", "free text tools", "wordbit"],
+};
 
 const tools = [
   {
