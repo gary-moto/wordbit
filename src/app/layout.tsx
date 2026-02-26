@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import TopNav from "@/components/TopNav";
 import Footer from "@/components/Footer";
+import { AdRails } from "@/components/AdRails";
 
 export const metadata: Metadata = {
   title: { default: "WordBit - Free Online Text Tools", template: "%s | WordBit" },
@@ -53,6 +54,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <TopNav />
         <main className="flex-1">{children}</main>
         <Footer />
+        <AdRails />
       </body>
     </html>
   );
